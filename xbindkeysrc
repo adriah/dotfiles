@@ -1,0 +1,52 @@
+#Launch applications
+"pavucontrol"
+   m:0x0 + c:193
+   XF86ØLaunch6
+
+"teamspeak3"
+   control+alt+r
+
+"skype"
+   control+alt+s
+
+"transmission-gtk"
+   control+alt+t
+
+"thunar"
+   control+alt+a
+
+"firefox"
+   control+alt+f
+"urxvt"
+   control+alt+Return
+
+"nvidia-settings"
+   XF86Display
+
+#Security
+"xtrlock"
+   control+alt+l
+
+#Keyboardbacklight
+"asus-kbd-backlight up"
+   XF86KbdBrightnessUp
+
+"asus-kbd-backlight down"
+   XF86KbdBrightnessDown
+
+#Spotify
+# Play/Pause
+"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+XF86AudioPlay
+
+# Next
+"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+XF86AudioNext
+
+# Previous
+"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+XF86AudioPrev
+
+# Stop
+"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
+XF86AudioStop

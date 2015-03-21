@@ -1,0 +1,50 @@
+# Short command aliases
+alias 'ls=ls --color=auto'
+alias 'bai=sudo shutdown -h now'
+alias 'brb=sudo reboot'
+alias 'grep=grep -n --color=auto'
+alias 'screenoff=xset dpms force off'
+alias 'ping=ping -c 3'
+alias 'connect=simple-mtpfs nexus'
+alias 'disconnect=sudo fusermount -u nexus'
+alias 'usb1=sudo mount -o umask=0,uid=nobody,gid=nobody /dev/sdc1 /mnt/usb'
+alias 'usb1-d=sudo umount /dev/sdc1'
+alias 'ts=cd /home/desiderius/Downloads/TeamSpeak3-Client-linux_amd64 && ./ts3client_linux_amd64'
+alias 'acyl=cd ~/.icons/ACYL_Icon_Theme_0.9.4/ && bash AnyColorYouLike'
+alias 'music=ncmpcpp'
+alias 'fix=xrandr --dpi 96 && nitrogen --restore'
+alias 'v-box=sudo modprobe vboxdrv && sudo modprobe vboxnetflt'
+#alias -g 'backlight=sudo /bin/bash /usr/local/share/kbd_backlight'
+alias 'backlight=sudo asus-kbd-backlight'
+alias 'susp=sudo systemctl suspend'
+alias 'vmfix=wmname LG3D'
+alias 'cl=clear'
+alias 'df=dfc'
+alias 'vi=vim'
+alias 'clock=while :; do clear; toilet --gay $(date +%H:%M:%S); sleep 1; done'
+
+# Play safe!
+alias 'mv=mv -i'
+alias 'cp=cp -i'
+
+
+# For convenience
+alias 'mkdir=mkdir -p'
+
+# Typing errors...
+alias 'cd..=cd ..'
+alias '..=cd ..'
+alias '... = cd ../..'
+alias 'cd --=cd ..'
+alias ':Q=exit'
+alias ':q=exit'
+
+#SSH
+alias 'matrixbox=ssh -p 5245 root@188.226.170.74'
+alias 'matrixbox2=ssh root@188.226.231.47'
+
+#packman/yaourt
+alias 'update=yaourt -Syy'
+alias 'upgrade=yaourt -Syua'
+# '[r]emove [o]rphans' - recursively remove ALL orphaned packages
+alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rns \$(/usr/bin/pacman -Qtdq | sed -e ':a;N;\$!ba;s/\n/ /g')"
