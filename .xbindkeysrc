@@ -1,0 +1,80 @@
+#Launch applications
+"killall -u desiderius"
+   XF86Launch1
+
+"teamspeak3"
+   control+alt+r
+
+"skype"
+   control+alt+s
+
+"transmission-gtk"
+   control+alt+t
+
+"thunar"
+   control+alt+a
+
+"google-chrome-stable"
+   control+alt+c
+
+"firefox"
+   control+alt+f
+
+"urxvt"
+   control+alt+Return
+
+"nvidia-settings"
+   XF86Display
+
+"pavucontrol"
+   control+alt+p
+
+#Security
+"xtrlock"
+   control+alt+l
+
+#Keyboardbacklight
+"asus-kbd-backlight up"
+   XF86KbdBrightnessUp
+
+"asus-kbd-backlight down"
+   XF86KbdBrightnessDown
+
+#Volume
+#Increase volume
+#"pamixer --increase 5"
+#   XF86AudioRaiseVolume
+
+#Decrease volume
+#"pamixer --decrease 5"
+#   XF86AudioLowerVolume
+
+#volume buttons
+"~/Scripts/sound.sh raise"
+    m:0x0 + c:123
+    XF86AudioRaiseVolume
+
+"~/Scripts/sound.sh lower"
+    m:0x0 + c:122
+    XF86AudioLowerVolume
+
+"~/Scripts/sound.sh mute"
+    m:0x0 + c:121
+    XF86AudioMute
+
+#Spotify
+# Play/Pause
+"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+XF86AudioPlay
+
+# Next
+"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+XF86AudioNext
+
+# Previous
+"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+XF86AudioPrev
+
+# Stop
+"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
+XF86AudioStop
