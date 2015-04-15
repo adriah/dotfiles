@@ -24,6 +24,8 @@ glyph_mem="\uE010"
 glyph_vol="\uE015"
 glyph_tim="\uE016"
 glyph_batt="\uE01F"
+glyph_batt1="\uE022"
+glyph_eth="\uE023"
 sep_solid="\uE01A"
 sep_line="\uE01B"
 sep_bar="\uE020"
@@ -31,11 +33,6 @@ sep_bar="\uE020"
 print_mem_used() {
   mem_used="$(free -m | awk 'NR==2 {print $3}')"
   echo -ne "${sep_line}${colour_grn} ${glyph_mem} ${mem_used}M "
-}
-
-print_volume() {
-  volume="$(amixer get PCM | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
-  echo -ne "${sep_line}${colour_mag} ${glyph_vol} ${volume}% "
 }
 
 print_datetime() {
@@ -50,12 +47,15 @@ print_batt_rem() {
 
 print_batt_time() {
   batrem="$(acpi | awk '{print $5}')"
-  echo -ne "${sep_line}${colour_cyn} ${glyph_batt} ${batrem} "
+  echo -ne "${sep_line}${colour_cyn} ${glyph_batt1} ${batrem} "
+}
+
+print_ip() {
+  ip="$(iwgetid -r)"
+  echo -ne "${sep_line}${colour_mag} ${glyph_eth} ${ip} "
 }
 
 # cpu (from: https://bbs.archlinux.org/viewtopic.php?pid=661641#p661641)
-rx_old=$(cat /sys/class/net/enp5s0/statistics/rx_bytes)
-tx_old=$(cat /sys/class/net/enp5s0/statistics/tx_bytes)
 
 while true; do
   # get new cpu idle and total usage
@@ -71,10 +71,10 @@ while true; do
 
   # Pipe to status bar, not indented due to printing extra spaces/tabs
   xsetroot -name "$(print_cpu_used)\
+$(print_ip)\
 $(print_mem_used)\
 $(print_batt_rem)\
 $(print_batt_time)\
-$(print_volume)\
 $(print_datetime)"
 
   # reset old rates
