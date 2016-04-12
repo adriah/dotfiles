@@ -2,12 +2,12 @@
 
 #Rice
 setxkbmap no			          &
-compton --config ~/.compton.conf -b       &
+#compton --config ~/.compton.conf -b       &
 xset +fp /home/desiderius/dwm		  &
 xset +fp /usr/local/share/fonts/terminus  &
 xrdb -merge ~/.Xresources                 &
-nitrogen --restore                        &
-volnoti					  &
+#nitrogen --restore                        &
+#volnoti					  &
 xbindkeys				  &
 
 #Things.
