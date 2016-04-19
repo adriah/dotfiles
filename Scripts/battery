@@ -1,0 +1,7 @@
+#!/bin/bash
+
+BATT=`acpi -b`
+if [[ `echo $BATT | grep Discharging` && `echo $BATT | cut -f 5 -d " "` < 01:15:00 ]] ;
+then
+	DISPLAY=:0.0 /usr/bin/notify-send "low battery" "$BATT"
+fi

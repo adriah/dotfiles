@@ -32,27 +32,27 @@ sep_bar="\uE020"
 
 print_mem_used() {
   mem_used="$(free -m | awk 'NR==2 {print $3}')"
-  echo -ne "${sep_line}${colour_grn} ${glyph_mem} ${mem_used}M "
+  echo -ne "${sep_line}${colour_blu} ${glyph_mem} ${mem_used}M "
 }
 
 print_datetime() {
   datetime="$(date "+%a %d %b ${sep_line} %H:%M")"
-  echo -ne "${sep_line}${colour_red} ${glyph_tim} ${datetime} "
+  echo -ne "${sep_line}${colour_blu} ${glyph_tim} ${datetime} "
 }
 
 print_batt_rem() {
   batt_rem="$(acpi | awk '{print $4}' | tr -d ',')"
-  echo -ne "${sep_line}${colour_dylw} ${glyph_batt} ${batt_rem} "
+  echo -ne "${sep_line}${colour_blu} ${glyph_batt} ${batt_rem} "
 }
 
 print_batt_time() {
   batrem="$(acpi | awk '{print $5}')"
-  echo -ne "${sep_line}${colour_cyn} ${glyph_batt1} ${batrem} "
+  echo -ne "${sep_line}${colour_blu} ${glyph_batt1} ${batrem} "
 }
 
 print_ip() {
   ip="$(iwgetid -r)"
-  echo -ne "${sep_line}${colour_mag} ${glyph_eth} ${ip} "
+  echo -ne "${sep_line}${colour_blu} ${glyph_eth} ${ip} "
 }
 
 # cpu (from: https://bbs.archlinux.org/viewtopic.php?pid=661641#p661641)
@@ -83,4 +83,3 @@ $(print_datetime)"
   # loop stats every 1 second
   sleep 1
 done
-
