@@ -1,7 +1,6 @@
 #Launch applications
-"pavucontrol"
-   m:0x0 + c:193
-   XF86ØLaunch6
+"killall -u desiderius"
+   XF86Launch1
 
 "teamspeak3"
    control+alt+r
@@ -15,24 +14,60 @@
 "thunar"
    control+alt+a
 
+"google-chrome-stable"
+   control+alt+c
+
 "firefox"
    control+alt+f
+
 "urxvt"
    control+alt+Return
 
 "nvidia-settings"
    XF86Display
 
+"pavucontrol"
+   control+alt+p
+
 #Security
-"xtrlock"
+"/bin/sh ~/Scripts/lock"
    control+alt+l
 
 #Keyboardbacklight
-"asus-kbd-backlight up"
+"kbdlight up 10"
    XF86KbdBrightnessUp
 
-"asus-kbd-backlight down"
+"kbdlight down 10"
    XF86KbdBrightnessDown
+
+#Screenbacklight
+"xbacklight -inc 10"
+  XF86MonBrightnessUp 
+
+"xbacklight -dec 10"
+   XF86MonBrightnessDown
+
+#Volume
+#Increase volume
+#"pamixer --increase 5"
+#   XF86AudioRaiseVolume
+
+#Decrease volume
+#"pamixer --decrease 5"
+#   XF86AudioLowerVolume
+
+#volume buttons
+"~/Scripts/sound.sh raise"
+    m:0x0 + c:123
+    XF86AudioRaiseVolume
+
+"~/Scripts/sound.sh lower"
+    m:0x0 + c:122
+    XF86AudioLowerVolume
+
+"~/Scripts/sound.sh mute"
+    m:0x0 + c:121
+    XF86AudioMute
 
 #Spotify
 # Play/Pause
