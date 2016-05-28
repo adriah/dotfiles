@@ -12,7 +12,6 @@ set sts=8
 set sw=8
 
 set number				" line numbering
-"set mouse=a				" enable mouse
 set incsearch			" incremental search
 filetype plugin on		" filetype plugin
 set autoindent			" auto indentation
@@ -27,12 +26,9 @@ nnoremap <C-H> :Hexmode<CR>
 inoremap <C-H> <esc>:Hexmode<CR>
 vnoremap <C-H> :<C-U>Hexmode<CR>
 
-" dragvisuals keybindings
-"vmap  <expr>  <LEFT>   DVB_Drag('left')
-"vmap  <expr>  <RIGHT>  DVB_Drag('right')
-"vmap  <expr>  <DOWN>   DVB_Drag('down')
-"vmap  <expr>  <UP>     DVB_Drag('up')
-"vmap  <expr>  D        DVB_Duplicate()
+" Visible tabs
+set list
+set listchars=tab:>-
 
 " tab navigation
 nmap <C-l> :tabnext<CR>
@@ -73,6 +69,8 @@ map <Leader>q :q<cr>
 map <Leader>m :Mymake<cr>
 map <Leader>c :copen<cr>
 map <Leader>C :cw<cr>
+map <Leader>pdf :TTarget pdf<cr>
+map <Leader>kkk :!NAME="$(echo "%" <bar> tr -d '.tex')";  acroread $NAME.pdf<cr>
 
 autocmd FileType scheme map <buffer> <leader>o :w !racket<cr>
 
