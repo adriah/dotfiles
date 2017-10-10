@@ -4,21 +4,23 @@ case "$1" in
     raise)
 	# increase volume
 	pamixer --increase 5
-	volnoti-show `pamixer --get-volume`
+	notify-send 'Sound' "$(pamixer --get-volume)\%"
+	#volnoti-show `pamixer --get-volume`
 	;;
     lower)
 	# lower volume
 	pamixer --decrease 5
-	volnoti-show `pamixer --get-volume`
+	notify-send 'Sound' "$(pamixer --get-volume)\%"
+	#volnoti-show `pamixer --get-volume`
 	;; 
     mute)
 	#Mute volume
-	if [ $pamixer --get-mute ] ; then
+	if [  $(pamixer --get-mute) = "true" ] ; then
 	   pamixer --unmute
-	   volnoti-show `pamixer --get-volume`
-	elif [ !$pamixer --get-mute ] ; then
+	   notify-send 'Sound' 'Unmuted'
+	elif [ $(pamixer --get-mute) = "false" ] ; then
 	   pamixer --mute
-	   volnoti-show `pamixer --get-volume`
+	   notify-send 'Sound' 'Muted'
 	fi
 esac
 
